@@ -13,7 +13,9 @@ RUN apt-get -y update && \
    
 
 # Add application-specific files and directories (e.g., the application code, configuration files, etc.)
+COPY /run_gotty.sh /run_gotty.sh
 
+RUN chmod 744 /run_gotty.sh
 
 # Expose ports and define the default command
 EXPOSE 8080
