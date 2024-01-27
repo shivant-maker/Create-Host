@@ -9,6 +9,7 @@ RUN apt-get -y update && \
     apt-get install -y curl && \
     curl -sLk https://github.com/yudai/gotty/releases/download/${GOTTY_TAG_VER}/gotty_linux_amd64.tar.gz \
     | tar xzC /usr/local/bin && \
+    apt-get purge --auto-remove -y curl && \
     
 
 COPY /run_gotty.sh /run_gotty.sh
