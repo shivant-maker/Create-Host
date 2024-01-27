@@ -4,10 +4,13 @@ LABEL maintainer="wingnut0310 <wingnut0310@gmail.com>"
 
 
 # Install dependencies and application-specific packages
-RUN apt-get update && \
-    apt-get install -y package1 package2 package3 && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get -y update && \
+    apt-get install -y curl && \
+    curl -sLk https://github.com/yudai/gotty/releases/download/${GOTTY_TAG_VER}/gotty_linux_amd64.tar.gz \
+    | tar xzC /usr/local/bin && \
+    apt-get purge --auto-remove -y curl && 
+  
+   
 
 # Add application-specific files and directories (e.g., the application code, configuration files, etc.)
 
