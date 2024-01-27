@@ -10,8 +10,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Add application-specific files and directories (e.g., the application code, configuration files, etc.)
-COPY app_code /app
-COPY config /config
+
 
 # Expose ports and define the default command
 EXPOSE 8080
